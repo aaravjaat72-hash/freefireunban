@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Fire Report Form - Unban Tool</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+
+        body {
+
+            font-family: 'Roboto', sans-serif;
+
+            background-color: #121212;
+
+            color: #ffffff;
+
+            background-image: radial-gradient(circle at 10% 20%, rgb(30, 30, 30) 0%, rgb(0, 0, 0) 90%);
+
+        }
+
+        h1, h2, .brand-font {
+
+            font-family: 'Rajdhani', sans-serif;
+
+        }
+
+        .gaming-border {
+
+            border: 2px solid #fbbf24;
+
+            box-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+
+        }
+
+        .gaming-input {
+
+            background-color: #2a2a2a;
+
+            border: 1px solid #444;
+
+            color: white;
+
+            transition: all 0.3s;
+
+        }
+
+        .gaming-input:focus {
+
+            border-color: #f59e0b;
+
+            outline: none;
+
+            box-shadow: 0 0 5px #f59e0b;
+
+        }
+
+        .btn-freefire {
+
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+
+            transition: transform 0.1s;
+
+        }
+
+        .btn-freefire:active {
+
+            transform: scale(0.98);
+
+        }
+
+        /* Scrollbar for the textarea */
+
+        textarea::-webkit-scrollbar {
+
+            width: 8px;
+
+        }
+
+        textarea::-webkit-scrollbar-track {
+
+            background: #1f2937;
+
+        }
+
+        textarea::-webkit-scrollbar-thumb {
+
+            background: #4b5563;
+
+            border-radius: 4px;
+
+        }
+
+        textarea::-webkit-scrollbar-thumb:hover {
+
+            background: #6b7280;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="min-h-screen flex flex-col items-center p-4">
+
+
+
+    <!-- Header Section -->
+
+    <header class="w-full max-w-3xl text-center mb-8 mt-4">
+
+        <h1 class="text-5xl md:text-6xl font-bold text-yellow-500 tracking-wider uppercase drop-shadow-lg">
+
+            Free Fire Report Form
+
+        </h1>
+
+        <p class="mt-3 text-gray-300 text-lg md:text-xl italic bg-gray-900/50 p-2 rounded-lg border border-gray-700">
+
+           " If your id recently baned. Please enter your details and get a report to submit it or free fire help center.
+           please make sure your recovery email is loged on this device to confirm us."
+
+        </p>
+
+    </header>
+
+
+
+    <!-- Main Content Area -->
+
+    <main class="w-full max-w-3xl bg-gray-800/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl gaming-border">
+
+        
+
+        <h2 class="text-3xl font-bold text-white mb-6 border-b border-gray-600 pb-2 flex items-center gap-2">
+
+            <i data-lucide="shield-alert" class="text-yellow-500"></i>
+
+            Appeal Generator Form
+
+        </h2>
+
+
+
+        <!-- Form Grid -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+            
+
+            <!-- Name Input -->
+
+            <div class="col-span-1">
+
+                <label class="block text-yellow-500 font-bold mb-2">ID Name (In-Game/Real)</label>
+
+                <input type="text" id="userName" placeholder="Example: Adam Pro" class="w-full p-3 rounded-lg gaming-input">
+
+            </div>
+
+
+
+            <!-- UID Input -->
+
+            <div class="col-span-1">
+
+                <label class="block text-yellow-500 font-bold mb-2">Free Fire UID</label>
+
+                <input type="number" id="userUID" placeholder="Example: 123456789" class="w-full p-3 rounded-lg gaming-input">
+
+            </div>
+
+
+
+            <!-- Device Name Input (NEW SECTION) -->
+
+            <div class="col-span-1">
+
+                <label class="block text-yellow-500 font-bold mb-2">Device/Emulator Name</label>
+
+                <input type="text" id="deviceName" placeholder="Example: BlueStacks 5 / Redmi Note 10" class="w-full p-3 rounded-lg gaming-input">
+
+            </div>
+
+
+
+            <!-- Years Since Ban -->
+
+            <div class="col-span-1">
+
+                <label class="block text-yellow-500 font-bold mb-2">How many years ago was it banned?</label>
+
+                <select id="banYears" class="w-full p-3 rounded-lg gaming-input cursor-pointer">
+
+                    <option value="" disabled selected>Select Duration</option>
+
+                    <option value="Less than 1 month ago">Recently (Less than 1 month)</option>
+
+                    <option value="6 months ago">6 months ago</option>
+
+                    <option value="1 year ago">1 year ago</option>
+
+                    <option value="2 years ago">2 years ago</option>
+
+                    <option value="3 years ago">3 years ago</option>
+
+                    <option value="4 years ago">4 years ago</option>
+
+                    <option value="5+ years ago">5+ years ago</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Ban Reason -->
+
+            <div class="col-span-1 md:col-span-2">
+
+                <label class="block text-yellow-500 font-bold mb-2">What was the reason for ban?</label>
+
+                <select id="banReason" class="w-full p-3 rounded-lg gaming-input cursor-pointer">
+
+                    <option value="" disabled selected>Tap to select reason</option>
+
+                    <option value="hack">Mistakenly Used Hacks</option>
+
+                    <option value="glitch">Game Glitch / Bug</option>
+
+                    <option value="pc">PC / Emulator Login</option>
+
+                    <option value="noreason">No Reason (Don't know)</option>
+
+                    <option value="other">Other</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Generate Button -->
+
+        <button onclick="generateAppeal()" class="w-full btn-honey text-black font-bold text-xl py-4 rounded-xl shadow-lg hover:shadow-yellow-500/50 flex items-center justify-center gap-2 mb-8">
+
+            <i data-lucide="file-text"></i>
+
+            GENERATE APPEAL LETTER
+
+        </button>
+
+
+
+        <!-- Result Section -->
+
+        <div id="resultSection" class="hidden animate-fade-in pb-8">
+
+            <div class="flex justify-between items-center mb-2">
+
+                <label class="text-green-400 font-bold text-lg">Generated Appeal Letter:</label>
+
+                <button onclick="copyToClipboard()" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors border border-gray-500">
+
+                    <i data-lucide="copy" size="18"></i>
+
+                    Copy Text
+
+                </button>
+
+            </div>
+
+            <textarea id="outputText" class="w-full h-96 bg-gray-900 text-gray-300 p-4 rounded-lg border border-gray-600 font-mono text-sm leading-relaxed resize-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 mb-2" readonly></textarea>
+
+            
+
+            <div id="copyMessage" class="text-green-500 text-center mb-6 hidden font-bold">
+
+                Text copied to clipboard! (Now send it to Garena)
+
+            </div>
+
+
+
+            <!-- New UNBAN YOUR ACCOUNT Button -->
+
+            <a href="https://ffsupport.garena.com/hc/en-us" target="_blank" class="w-full btn-freefire text-black font-bold text-xl py-4 rounded-xl shadow-lg hover:shadow-yellow-500/50 flex items-center justify-center gap-2 no-underline transform hover:scale-[1.02] transition-all">
+
+                <i data-lucide="external-link"></i>
+
+                UNBAN YOUR ACCOUNT (Submit Request)
+
+            </a>
+
+        </div>
+
+
+
+    </main>
+
+
+
+    <footer class="mt-8 text-gray-500 text-sm">
+
+        &copy; 2025 Free Fire Report. All Rights Reserved.
+
+    </footer>
+
+
+
+    <script>
+
+        // Initialize Icons
+
+        lucide.createIcons();
+
+
+
+        function generateAppeal() {
+
+            // Get values
+
+            const name = document.getElementById('userName').value || "[Name]";
+
+            const uid = document.getElementById('userUID').value || "[UID]";
+
+            const device = document.getElementById('deviceName').value || "[Device Name]";
+
+            const years = document.getElementById('banYears').value || "[Duration]";
+
+            const reason = document.getElementById('banReason').value;
+
+
+
+            // Validation
+
+            if (!reason) {
+
+                alert("Please select a reason for the ban! (Reason select karo)");
+
+                return;
+
+            }
+
+
+
+            let subject = "";
+
+            let body = "";
+
+
+
+            // Logic based on selection
+
+            if (reason === 'hack') {
+
+                // Template for Hack
+
+                subject = `Subject: Appeal for Ban Removal & Sincere Apology - UID: ${uid}`;
+
+                body = `To the Garena Free Fire Support Team,
+
+
+
+I am writing this request to sincerely apologize for a mistake I made regarding my Free Fire account. Recently, my account was banned due to the use of unauthorized third-party software (hacks).
+
+
+
+I want to honestly admit that I did use a hack, and I fully accept that this was a violation of the game’s Fair Play Policy. It was a moment of bad judgment on my part, and I deeply regret my actions. I have invested a lot of time and emotion into this account, and losing it has been a huge lesson for me.
+
+
+
+I promise you that I will never use any cheats, hacks, or scripts again in the future. I want to play the game fairly and respect the community guidelines.
+
+
+
+I humbly request you to please consider my apology and give me one last chance by lifting the ban on my account. I am willing to accept a temporary suspension or any other penalty, but please do not permanently ban my account.
+
+
+
+Here are my account details:
+
+
+
+User ID (UID): ${uid}
+
+Server: India
+
+Device Name: ${device}
+
+Time since ban: ${years}
+
+
+
+I hope you will understand my situation and grant me forgiveness this one time.
+
+
+
+Sincerely,
+
+${name}`;
+
+
+
+            } else if (reason === 'glitch') {
+
+                // Template for Glitch
+
+                subject = `Subject: Appeal regarding Wrongful Ban / System Glitch - UID: ${uid}`;
+
+                body = `To the Garena Free Fire Support Team,
+
+
+
+I am writing to report a serious issue regarding my Free Fire account. My account was recently suspended/banned without any valid reason, and I believe this is due to a technical glitch or a system error on the server side.
+
+
+
+I want to clarify that I have never used any hacks, scripts, or third-party plugins. I have always been a fair player and I strictly follow the Garena Free Fire Fair Play Policy.
+
+
+
+The ban occurred suddenly while I was playing/updating the game. Since I have not violated any rules, I suspect that the anti-cheat system might have flagged my account due to a network lag or a device bug by mistake.
+
+
+
+I request you to kindly perform a manual review of my account logs. I am confident that a proper investigation will prove my innocence. Please restore my account as soon as possible as I have invested a lot of time and money into it.
+
+
+
+My Account Details:
+
+
+
+In-Game Name: ${name}
+
+User ID (UID): ${uid}
+
+Device Name: ${device}
+
+year of Ban: ${years}
+
+
+
+Looking forward to a positive response and a quick resolution.
+
+
+
+Sincerely,
+
+${name}`;
+
+
+
+            } else if (reason === 'pc') {
+
+                // Template for PC/Emulator
+
+                subject = `Subject: Appeal against False Ban - Account Flagged due to PC Emulator - UID: ${uid}`;
+
+                body = `To the Garena Free Fire Support Team,
+
+
+
+I am writing to appeal the suspension of my Free Fire account. My account was recently banned, and I believe this is a "False Positive" caused by the device I was using.
+
+
+
+I recently started playing Free Fire on my PC using an Android Emulator (${device}). I use the official version of the emulator simply to experience the game on a larger screen and for better performance.
+
+
+
+It seems that the Free Fire anti-cheat system mistakenly detected the emulator environment as "unauthorized third-party software" or a hack. I want to clarify that:
+
+
+
+I was not using any cheats, scripts, or bypass tools.
+
+I was using a standard, unmodified emulator.
+
+I respect the game's policy regarding emulator matchmaking.
+
+
+
+I request you to please manually review my account activity. You will see that the gameplay is legitimate and the software detected was just an emulator, not a hack.
+
+
+
+Please rectify this error and lift the ban from my account.
+
+
+
+My Account Details:
+
+
+
+User ID (UID): ${uid}
+
+Emulator Used: ${device}
+
+year of Ban: ${years}
+
+
+
+I trust that you will resolve this misunderstanding.
+
+
+
+Sincerely,
+
+${name}`;
+
+
+
+            } else {
+
+                // NEW Template for No Reason / Other (Updated as per request)
+
+                subject = `Subject: URGENT: Wrongful Account Ban Without Any Violation - UID: ${uid}`;
+
+                body = `To the Garena Free Fire Support Team,
+
+
+
+I am writing to you with great concern regarding the sudden suspension of my Free Fire account. I was shocked to receive a ban notification because I have strictly followed all the Community Guidelines and Fair Play Policies since I started playing.
+
+
+
+I want to state clearly and firmly:
+
+
+
+I have NOT used any hacks, scripts, or third-party tools.
+
+I have NOT exploited any bugs or glitches.
+
+I have NOT shared my account details with anyone else.
+
+I have NOT used any unauthorized device or emulator.
+
+
+
+My account activity has always been clean. I believe my account has been banned due to a False Positive detection by the anti-cheat system. It is disheartening for a loyal and fair player like me to lose access to my account without any valid reason.
+
+
+
+I humbly request a manual investigation of my gameplay logs. I am confident that a proper check will prove my innocence. Please rectify this mistake and restore my account.
+
+
+
+Account Details:
+
+
+
+In-Game Name: ${name}
+
+User ID (UID): ${uid}
+
+Server: India
+
+Ban year: ${years}
+
+
+
+I trust the Garena team will ensure justice for fair players. Waiting for your quick support.
+
+
+
+Sincerely,
+
+${name}`;
+
+            }
+
+
+
+            // Combine Subject and Body
+
+            const fullText = `${subject}\n\n${body}`;
+
+
+
+            // Show result
+
+            document.getElementById('outputText').value = fullText;
+
+            document.getElementById('resultSection').classList.remove('hidden');
+
+            
+
+            // Scroll to result
+
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+
+        }
+
+
+
+        function copyToClipboard() {
+
+            const copyText = document.getElementById("outputText");
+
+            copyText.select();
+
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            
+
+            document.execCommand('copy'); // Fallback for older browsers/iframe context
+
+
+
+            // Show success message
+
+            const msg = document.getElementById("copyMessage");
+
+            msg.classList.remove("hidden");
+
+            setTimeout(() => {
+
+                msg.classList.add("hidden");
+
+            }, 3000);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+</ads> <script
+
+  type="text/javascript"
+
+  src="//hardypistol.com/62/e7/c0/62e7c08f4552a678aeb4428b385654cb.js"
+
+></script>
+
+</ads> <script
+
+  type="text/javascript"
+
+  src="//hardypistol.com/07/fd/09/07fd0925c7ad677f3f940d9ab49bb0ff.js"
+
+></script>
